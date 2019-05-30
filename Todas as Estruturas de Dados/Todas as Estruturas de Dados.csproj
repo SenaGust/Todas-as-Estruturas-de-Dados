@@ -1,0 +1,8 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace>Todas_as_Estruturas_de_Dados</RootNamespace>
+  </PropertyGroup>
+
+</Project>

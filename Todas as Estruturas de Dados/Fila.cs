@@ -23,9 +23,9 @@ namespace Todas_as_Estruturas_de_Dados
             Ultimo = novo;
         }
 
-        public string Retirar()
+        public IDado Retirar()
         {
-            if (Vazia())
+            if (Vazio())
                 return null;
 
             Elemento aux = Primeiro.Proximo;
@@ -38,12 +38,12 @@ namespace Todas_as_Estruturas_de_Dados
 
             aux.Proximo = null;
 
-            return aux.MeuDado.ToString();
+            return aux.MeuDado;
         }
 
         public override string ToString()
         {
-            if (Vazia())
+            if (Vazio())
                 return null;
 
             StringBuilder auxString = new StringBuilder();
@@ -58,7 +58,7 @@ namespace Todas_as_Estruturas_de_Dados
             return auxString.ToString();
         }
 
-        public bool Vazia()
+        public bool Vazio()
         {
             return (Primeiro == Ultimo);
         }

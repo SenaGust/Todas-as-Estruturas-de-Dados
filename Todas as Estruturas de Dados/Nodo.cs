@@ -39,5 +39,10 @@ namespace Todas_as_Estruturas_de_Dados
 
             return aux;
         }
+        public override bool Equals(object obj)
+        {
+            Nodo nodo = (Nodo)obj;
+            return MeuDado.Equals(nodo.MeuDado);
+        }
     }
 }

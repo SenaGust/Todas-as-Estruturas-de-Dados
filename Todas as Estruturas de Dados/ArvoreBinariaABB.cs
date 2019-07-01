@@ -150,5 +150,38 @@ namespace Todas_as_Estruturas_de_Dados
             else
                 return BuscaRecursiva(busca, raiz.Direita);
         }
+
+
+        public override bool Equals(object obj)
+        {
+            ArvoreBinariaABB NovaArvoreBinariaABB = (ArvoreBinariaABB)obj;
+            return VerificaIgualdadeRecursivo(this.Raiz, NovaArvoreBinariaABB.Raiz);
+        }
+        private bool VerificaIgualdadeRecursivo(Nodo raizA, Nodo raizB)
+        {
+            //Base ou condição de parada (caso tiver alguma ou ambas as raízes nulas)
+            if (raizA == null)
+            {
+                if (raizB == null)
+                    return true;
+                else
+                    return false;
+            }
+            else if (raizB == null)
+            {
+                if (raizA == null)
+                    return true;
+                else
+                    return false;
+            }
+
+            //"formula"
+            if (raizA.Equals(raizB)) //São iguais, continuar...
+            {
+                return VerificaIgualdadeRecursivo(raizA.Direita, raizB.Direita) && VerificaIgualdadeRecursivo(raizA.Esquerda, raizB.Esquerda);
+            }
+            else //Não são iguais, retornar false
+                return false;
+        }
     }
 }

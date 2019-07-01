@@ -97,7 +97,34 @@ namespace Todas_as_Estruturas_de_Dados
                 return auxRet.MeuDado;
             }
         }
-        
+        public IDado Retirar(int valor)
+        {
+            if (this.Vazia()) return null;
+
+            Elemento aux = this.Primeiro;
+            int pos = 0;
+
+            while ((aux.Proximo != null) && pos < valor)
+            {
+                aux = aux.Proximo;
+                pos++;
+            }
+
+            if (aux.Proximo == null)
+                return null;
+            else
+            {
+                Elemento auxRet = aux.Proximo;
+                aux.Proximo = auxRet.Proximo;
+                if (auxRet == this.Ultimo)
+                    this.Ultimo = aux;
+                else
+                    auxRet.Proximo = null;
+
+                return auxRet.MeuDado;
+            }
+        }
+
         public void Concatenar(Lista outraLista)
         {
 
